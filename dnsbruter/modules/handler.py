@@ -143,14 +143,17 @@ async def handler():
         exit()
     except Exception as e:
         logger(f"Exception occured in the main handler module due to: {e}, {type(e)}", "warn")
-        
 def Main():
     try:
         if sys.platform.startswith('win'):
             asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
         else:
             asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
-        loop = asyncio.get_event_loop()
+        try:
+            loop = asyncio.get_running_loop()
+        except RuntimeError:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
         loop.run_until_complete(handler())
     except (KeyboardInterrupt, asyncio.CancelledError):
         exit(1)
