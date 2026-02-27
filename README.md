@@ -26,34 +26,12 @@ Dnsbruter is a lightweight, fast, and smooth asynchronous DNS brute-forcing and 
 
 Dnsbruter can be installed quickly using various methods, including `pip`, `pipx`, and `Docker`. Choose the method that best suits your environment.
 
-#### pip Installation
-Ensure you have `pip` installed with the latest version of Python:
-
-```bash
-pip install --break-system-packages git+https://github.com/RevoltSecurities/Dnsbruter.git
-```
-
 #### pipx Installation
 For isolated Python environments, you can use `pipx`:
 
 ```bash
 pipx install git+https://github.com/RevoltSecurities/Dnsbruter.git
 ```
-
-#### Docker Installation
-For Docker-based environments, build the Docker image using:
-
-```bash
-git clone https://github.com/RevoltSecurities/Dnsbruter.git && cd Dnsbruter
-sudo docker build -t dnsbruter .
-```
-
-**Docker Usage:**
-
-```bash
-sudo docker run --rm -it -v /path/to/wordlist.txt:/opt/wordlist.txt -v $(pwd):/output dnsbruter -d google.com -w /opt/wordlist.txt --output /output/test.txt
-```
-
 ## Usage
 
 To use Dnsbruter, execute the following command to display help options:
