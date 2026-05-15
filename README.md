@@ -30,7 +30,7 @@ Dnsbruter can be installed quickly using various methods, including `pip`, `pipx
 For isolated Python environments, you can use `pipx`:
 
 ```bash
-pipx install git+https://github.com/RevoltSecurities/Dnsbruter.git
+pipx install git+https://github.com/1h3ll/Dnsbruter.git
 ```
 ## Usage
 
